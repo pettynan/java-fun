@@ -1,18 +1,25 @@
 # JAVA FUN. JAVA. FUN. JAVA IS FUN.
 
 ## Contents
-  ### basics
+  ## basics
   ### Lab 01
     pluralize
     flipNHeads
     clock
   
-  ### basiclibrary
+  ## basiclibrary
   ### Lab 02
     roll
     containsDuplicates
     calculateAverage
     lowestAverage
+  ### Lab 03
+    analyzeWeather
+    tally
+
+  ## linter
+  ### Lab 03
+
 
 
 ## Change Log
