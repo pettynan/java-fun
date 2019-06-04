@@ -3,6 +3,11 @@
  */
 package linter;
 
+import java.util.*;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.File;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
@@ -14,5 +19,30 @@ public class App {
 
     public static List<String> linter(String path) {
 
+        ArrayList<String> errorArray = new ArrayList<>();
+        int currentLine = 0;
+
+
+        try {
+            Scanner sc = new Scanner(new File(path));
+
+            while(sc.hasNextLine()) {
+                currentLine++;
+                String line = sc.nextLine();
+
+            }
+
+
+
+
+
+        } catch(FileNotFoundException e) {
+            System.out.println("File not found");
+            System.out.println(e);
+            return null;
+        }
+
+
+        return errorArray;
     }
 }
