@@ -20,6 +20,13 @@
   ## linter
   ### Lab 03
 
+  ## inheritance
+  ### Lab 06
+    Restaurant
+    .toString
+    addReview
+    Review
+    .toString
 
 
 ## Change Log
@@ -27,3 +34,4 @@
   2019/05/28 - basics directory added
   2019/05/29 - basiclibrary directory added
   2019/05/29 - Lab 02 completed
+  2019/06/04 - Lab 06 completed
