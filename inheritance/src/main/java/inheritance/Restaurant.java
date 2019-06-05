@@ -36,7 +36,11 @@ public class Restaurant implements Business {
 
     @Override
     public int getStars() {
-        return (this.totalStars / getReviewList().size());
+        if (reviewList.size() == 0) {
+            return 5;
+        } else {
+            return (this.totalStars / reviewList.size());
+        }
     }
 
     @Override

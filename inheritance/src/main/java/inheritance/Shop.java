@@ -32,8 +32,11 @@ public class Shop implements Business {
 
     @Override
     public int getStars() {
-        return (this.totalStars / reviewList.size()
-        );
+        if (reviewList.size() == 0) {
+            return 5;
+        } else {
+            return (this.totalStars / reviewList.size());
+        }
     }
 
     @Override
@@ -46,15 +49,15 @@ public class Shop implements Business {
         return this.reviewList;
     }
 
-    public String getDescription() {
-        return this.description;
-    }
-
     @Override
     public void addReview(Review review) {
     this.totalStars += review.stars;
     review.business = this;
     reviewList.add(review);
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 
     public String toString(Shop shop) {
