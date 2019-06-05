@@ -1,21 +1,17 @@
 package inheritance;
 
-public class Restaurant {
+import java.util.ArrayList;
+
+public class Restaurant implements Business {
 
     String name; // should be a string.
-    int stars; // should be an integer between 0 and 5.
+    int totalStars; // should be an integer between 0 and 5.
     int price; // should be 1, 2, or 3.
+    ArrayList<Review> reviewList = new ArrayList<>();
 
-    public Restaurant(String name, int stars, int price) {
+    public Restaurant(String name, int price) {
         this.name = name;
-
-        if (stars > 5) {
-            this.stars = 5;
-        } else if (stars < 0) {
-            this.stars = 0;
-        } else {
-            this.stars = stars;
-        }
+        this.totalStars = 0;
 
         if (price > 3) {
             this.price = 3;
@@ -26,18 +22,40 @@ public class Restaurant {
         }
     }
 
-    public static String toString(Restaurant restaurant) {
-        String outputString = "The restaurant " + restaurant.name + " has " + restaurant.stars + " out of 5 stars and a price rating of ";
-
-        for ( int i = 0 ; i < restaurant.price ; i++) {
-            outputString += "$";
-        }
-        outputString += ".";
-        return outputString;
+    @Override
+    public void addReview(Review review) {
+        review.business = this;
+        this.totalStars += review.stars;
+        reviewList.add(review);
     }
 
-    public void addReview(Review review) {
-        review.restaurant = this;
-        this.stars = (this.stars + review.stars) / 2;
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public int getStars() {
+        return (this.totalStars / getReviewList().size());
+    }
+
+    @Override
+    public int getPrice() {
+        return this.price;
+    }
+
+    @Override
+    public ArrayList<Review> getReviewList() {
+        return this.reviewList;
+    }
+
+    public String toString(Restaurant restaurant) {
+        StringBuilder outputString = new StringBuilder("The restaurant " + restaurant.name + " has " + (restaurant.totalStars / getReviewList().size()) + " out of 5 stars and a price rating of ");
+
+        for ( int i = 0 ; i < restaurant.price ; i++) {
+            outputString.append("$");
+        }
+        outputString.append(".");
+        return outputString.toString();
     }
 }

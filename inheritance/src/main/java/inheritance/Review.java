@@ -4,7 +4,7 @@ public class Review {
     String body;
     String author;
     int stars;
-    Restaurant restaurant;
+    Business business;
 
     public Review(String body, String author, int stars) {
         this.body = body;
@@ -19,12 +19,8 @@ public class Review {
         }
     }
 
-//    public void addRestaurant(Restaurant restaurant) {
-//        this.restaurant = restaurant;
-//    }
-
     public static String toString(Review review) {
-        String outputString = "Restaurant:" + review.restaurant +
+        String outputString =
         "Review by " + review.author + ": " + review.stars + " out of 5 stars.\n" +
                 "Review body:\n" +
                 review.body;
