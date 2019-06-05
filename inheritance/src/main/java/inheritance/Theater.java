@@ -84,12 +84,10 @@ public class Theater implements Business {
             outputString.append("No movies currently playing.");
         } else {
             outputString.append("Currently playing movies are:");
-            for (int i = 0 ; i < movieList.size() ; i++) {
-                outputString.append("\n" +
-                        movieList.get(i) + ",");
+            for (String movie : movieList) {
+                outputString.append("\n" + movie);
             }
         }
-
         return outputString.toString();
     }
 }

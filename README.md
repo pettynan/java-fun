@@ -28,6 +28,24 @@
     Review
     .toString
 
+  ### Lab 07
+  ### Business (interface)
+    *All classes have:*
+    ReviewList, addReview
+    Name, Stars, Price
+
+    - Restaurant
+      toString
+
+    - Shop
+      Description
+      toString
+
+    - Theater
+      MovieList, addMovie, removeMovie
+      toString
+
+
 
 ## Change Log
   2019/05/28 - Repository Created  
@@ -35,3 +53,4 @@
   2019/05/29 - basiclibrary directory added
   2019/05/29 - Lab 02 completed
   2019/06/04 - Lab 06 completed
+  2019/06/05 - Lab 07 completed
